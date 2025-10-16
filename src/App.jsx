@@ -47,7 +47,7 @@ import EmployeeCodeManagement from './Admin/Employee/EmployeeCodeManagement';
 import EmployeeProjectDashboard from './Employee/Project/EmployeeProjectDashboard';
 import AdminSettings from './Admin/Settings/AdminSettings';
 import EmployeeTools from './Employee/Settings/EmployeeTools';
-import AdminProjectManagement from './Admin/Project/AdminProjectManagement';
+import AdminProjectManagement from './Admin/project/AdminProjectManagement';
 import ManagerProjectDashboard from './Manager/Project/ManagerProjectDashboard';
 function App() {
     const location = useLocation();
