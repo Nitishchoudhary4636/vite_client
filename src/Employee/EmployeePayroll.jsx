@@ -25,14 +25,15 @@ const EmployeePayroll = () => {
           headers: { Authorization: `Bearer ${token}` },
         };
 
+        const apiBase = import.meta.env.VITE_API_URL || '';
         const employeeResponse = await axios.get(
-          'http://localhost:5000/api/employees/me',
+          `${apiBase}/api/employees/me`,
           config
         );
         setEmployeeData(employeeResponse.data);
 
         const payrollResponse = await axios.get(
-          'http://localhost:5000/api/payroll/employee',
+          `${apiBase}/api/payroll/employee`,
           {
             ...config,
             params: { month: currentMonth, year: currentYear },
@@ -82,7 +83,7 @@ const EmployeePayroll = () => {
           <div className="flex justify-center">
             {employeeData.profileImage ? (
               <img
-                src={`http://localhost:5000/${employeeData.profileImage}`}
+                src={`${import.meta.env.VITE_API_URL || ''}/${employeeData.profileImage}`}
                 alt="Profile"
                 className="w-40 h-40 rounded-xl object-cover"
               />

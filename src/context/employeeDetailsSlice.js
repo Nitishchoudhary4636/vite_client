@@ -2,7 +2,7 @@ import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 import axios from 'axios';
 import { BOTH_PROFILE_ENDPOINT } from '../utils/constant';
 // Base URL
-const API_URL = 'http://localhost:5000/api/v1';
+const API_URL = import.meta.env.VITE_API_URL ? `${import.meta.env.VITE_API_URL}/api/v1` : '/api/v1';
 
 // Async thunk for fetching employee details
 export const fetchEmployeeDetails = createAsyncThunk(
