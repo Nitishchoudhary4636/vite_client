@@ -46,10 +46,12 @@ function Login() {
             return;
         }
 
+
         try {
             dispatch(setLoading(true));
 
-            const response = await fetch(`http://localhost:5000${apiEndpoint}`, {
+            const apiBase = import.meta.env.VITE_API_URL || '';
+            const response = await fetch(`${apiBase}${apiEndpoint}`, {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 credentials: 'include',
